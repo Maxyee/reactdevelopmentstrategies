@@ -10,7 +10,7 @@ At first, we need to install the nodejs into our local machine. without nodejs w
 
 for installing nodejs you can follow this below link:
 
-[my another git repository]
+[Read this blog where I wrote how to install Nodejs](https://github.com/Maxyee/nodejs_logics/tree/master/InstallNodejs)
 
 After installing the nodejs into our local machine, now we need to run some command for installing
 reactjs project. commands are given below:
