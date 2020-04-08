@@ -28,7 +28,6 @@ Now `App.js` Component Code ...
 import React from 'react';
 import Mobile from './components/Mobile';
 import './App.css';
-import Gameresource from './classComponents/Gameresource';
 
 function App() {
 
@@ -45,11 +44,24 @@ function App() {
 export default App;
 
 ```
-And Mobile.js Component Code ...
+Into this code section I define a variable `mobileInfo` and into this variable i define two object one is `name` and another is `model`
+
+`const mobileInfo = {name: 'Iphone', model: 'ip7'}`
+
+After that I pass this `mobileInfo` variable value to another component called `Mobile` as a `resource` attribute
+
+`<Mobile resource={mobileInfo}></Mobile>`
+
+Finally I added the Mobile component file directory path on the top of this file
+
+`import Mobile from './components/Mobile';`
+
+Now the App.js file work is done. Let's see how we can handle the passing data to our Mobile Component.
+
+Mobile.js Component Code ...
 
 ```
 import React from 'react';
-
 
 function Mobile(props) {
   return (
@@ -66,10 +78,26 @@ function Mobile(props) {
 export default Mobile;
 
 ```
+Here into this component, At first I fetch those data using `props`. Now I am following the functional component procedure.
+In this procedure, I have to pass the props through the function parameter.
+
+`function Mobile(props)`
+
+Now whole function can recognize what is the value of that props. After that I define the data of that props like this way
+
+```
+        <h4>(name props object) Mobile name : {props.resource.name}</h4>
+
+        <h5>(model props object)Mobile model: {props.resource.model}</h5>
+
+```
+
+here `{props.resource.name}` this will return the value `Iphone`.
+
+and `{props.resource.model}`this will return the value `ip7`.
 
 
-
-
+That's All what I know and how I work with props for functional components.
 
 
 
