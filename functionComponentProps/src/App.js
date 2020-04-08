@@ -1,7 +1,7 @@
 import React from 'react';
 import Mobile from './components/Mobile';
 import './App.css';
-import Gameresource from './classComponents/Gameresource';
+
 
 function App() {
 
