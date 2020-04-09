@@ -15,7 +15,7 @@ for installing nodejs you can follow this below link:
 After installing the nodejs into our local machine, now we need to run some command for installing
 reactjs project. commands are given below:
 
-```
+```bash
 npx create-react-app my-app  
 cd my-app
 npm start
@@ -25,7 +25,7 @@ npm start
 here `my-app` is our project directory.if we want to change the directory name then we can follow
 command like this way
 
-```
+```bash
 npx create-react-app myproject
 cd myproject
 npm start
