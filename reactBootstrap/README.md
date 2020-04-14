@@ -20,3 +20,32 @@ On the other hand, I have followed the way to install bootstrap which I am going
 
 ## My installation process react-bootstrap
 Firstly, after installing the react project just write this below command from your terminal.
+
+`npm install react-bootstrap bootstrap`
+
+Secondly, open the `App.js` file from your project `src` folder and add the import to the bootstrap CSS file.
+
+`import 'bootstrap/dist/css/bootstrap.min.css';`
+
+Finally, here is the `App.js` file code, how I implement the line into my project.
+
+```js
+
+import React from 'react';
+import Navbar from './components/Navbar';
+
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+function App() {
+  return (
+    <div>
+      <Navbar></Navbar>
+    </div>
+  );
+}
+
+export default App;
+
+```
+That's all, now we can use all the components and layout of react-bootstrap into our project.
