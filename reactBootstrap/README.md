@@ -35,7 +35,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';   // add this line
 
 function App() {
   return (
