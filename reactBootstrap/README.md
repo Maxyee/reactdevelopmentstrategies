@@ -83,7 +83,7 @@ Thirdly, if we want to load a specific bootstrap version then we can use the CDN
 
 ```
 
-Finally, here is the `App.js` file code, how I implement the line into my project.
+Finally,if we follow the CDN process, we should not implement this line into our `App.js` file. Otherwise, without using CDN process here is the `App.js` file code, how I implement the line into my project.
 
 ```js
 
