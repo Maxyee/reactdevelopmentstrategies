@@ -31,5 +31,14 @@ cd myproject
 npm start
 
 ```
+we can install our react project by using `npm` library in this way:
+
+```bash
+npm install -g create-react-app
+create-react-app demo-app
+cd demo-app
+
+```
+
 
 that's all! In this way we can install our reactjs project
