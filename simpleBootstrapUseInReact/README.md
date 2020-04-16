@@ -94,3 +94,6 @@ Finally, open the `index.html` file from your project. you can find it `public/i
 ```
 That's all, now we can use all the components and layout of simple bootstrap into our project.
 
+## Here is the simple Project for getting clear IDEA !
+
+- [SimpleProject](https://github.com/Maxyee/reactdevelopmentstrategies/tree/master/simpleBootstrapUseInReact/sampleProject)
