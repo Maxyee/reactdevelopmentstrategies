@@ -1,5 +1,7 @@
 import React from 'react';
 import IntroHooks from './components/IntroHooks';
+import StateHook from './components/StateHook';
+import EffectHook from './components/EffectHook';
 
 function App() {
 
@@ -13,7 +15,17 @@ function App() {
       </div>
 
       <div>
-        
+        <p>State Hook More Than Once</p>
+        <hr></hr>
+        <StateHook></StateHook>
+        <hr></hr>
+      </div>
+
+      <div>
+        <p>Effect Hook More Than Once</p>
+        <hr></hr>
+        <EffectHook></EffectHook>
+        <hr></hr>
       </div>
     </div>
   );
