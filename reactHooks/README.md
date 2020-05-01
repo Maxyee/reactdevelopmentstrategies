@@ -1,68 +1,137 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Hooks
 
-## Available Scripts
+## Simple Introduction with hook code.
 
-In the project directory, you can run:
+```js
+import React, { useState } from 'react';
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+function IntroHooks(){
 
-### `npm test`
+    const [count, setCount] = useState(0);
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    return(
+        <div>
+            <p>You clicked {count} times</p>
+            <button onClick={()=> setCount(count + 1)}>
+                Click me
+            </button>
+        </div>
+    );
+}
 
-### `npm run build`
+export default IntroHooks;
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+Into this code section, we can see that I define a line which I mention below, here the besically main hook
+concept is running. Here `count` is a variable and `setCount` is a function. By using the `useState` I initialized both value
+to zero 0.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```js
+const [count, setCount] = useState(0);
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+So finally into the component return section, we can use the `setCount` function for updating the `count` variable value
+in real time.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Simple State Hook.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```js
+import React, { useState } from 'react';
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+function StateHook(){
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    const [count, setCount] = useState(0);
 
-## Learn More
+    const [age, setAge] = useState(5);
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    const [fruit, setFruit] = useState('banana');
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    const [todos, setTodos] = useState([{ text: 'Learn Hooks'}]);
 
-### Code Splitting
+    return(
+        <div>
+            <p>You clicked {count} times</p>
+            <button onClick={()=> setCount(count + 1)}>
+                Click me
+            </button>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+            <p>Showing age from state = {age}</p>
+            <button onClick={()=> setAge(27)}>
+                Click to Show actual age
+            </button>
 
-### Analyzing the Bundle Size
+            <p>Write your fruite name it will update the name</p>
+            <p>Fruit = {fruit}</p>
+            <input onChange={() => setFruit(fruit)} />
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+            <p>todolist</p>
+            <ul>
+                <li>
+                    {todos.text}
+                </li>
+                <li>
+                    <button onClick={()=>setTodos([{text: 'hello Julhas'}])}>
+                        Click change value
+                    </button>
+                </li>
+            </ul>
+        </div>
+    );
+}
 
-### Making a Progressive Web App
+export default StateHook;
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+```
+same concept as Intoduction hook which I write above, here is the example how we can use this hook in different way into the component. Below line is the main focus for `StateHook` file.
 
-### Advanced Configuration
+```js
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+  const [count, setCount] = useState(0);
 
-### Deployment
+  const [age, setAge] = useState(5);
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+  const [fruit, setFruit] = useState('banana');
 
-### `npm run build` fails to minify
+  const [todos, setTodos] = useState([{ text: 'Learn Hooks'}]);
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```
+
+## Effect Hook.
+
+```js
+import React, { useState, useEffect } from 'react';
+
+function EffectHook(){
+
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        document.title = `you clicked ${count} times` 
+    });
+
+    return(
+        <div>
+            <p>You clicked {count} times</p>
+            <button onClick={()=> setCount(count + 1)}>
+                click me
+            </button>
+        </div>
+    );
+}
+
+export default EffectHook;
+
+```
+
+After running this effect hook, we will see that our web browser tab-bar title can be upated its count value in real time 
+
+```js
+useEffect(() => {
+    document.title = `you clicked ${count} times` 
+});
+
+```
+This is the main code section for effect hook.
