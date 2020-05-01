@@ -99,5 +99,39 @@ same concept as Intoduction hook which I write above, here is the example how we
 
 ```
 
+## Effect Hook.
 
+```js
+import React, { useState, useEffect } from 'react';
 
+function EffectHook(){
+
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        document.title = `you clicked ${count} times` 
+    });
+
+    return(
+        <div>
+            <p>You clicked {count} times</p>
+            <button onClick={()=> setCount(count + 1)}>
+                click me
+            </button>
+        </div>
+    );
+}
+
+export default EffectHook;
+
+```
+
+After running this effect hook, we will see that our web browser tab-bar title can be upated its count value in real time 
+
+```js
+useEffect(() => {
+    document.title = `you clicked ${count} times` 
+});
+
+```
+This is the main code section for effect hook.
