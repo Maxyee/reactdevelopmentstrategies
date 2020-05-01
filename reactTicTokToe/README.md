@@ -1,6 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Tic Toc Toe Game React Knowledge
 
 ## Available Scripts
+
+For installing node dependencies In the project directory
+
+### `npm install`
 
 In the project directory, you can run:
 
@@ -9,60 +13,100 @@ In the project directory, you can run:
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Concepts
 
-### `npm test`
+```js
+import React from 'react';
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+// components section
+import Board from './components/Board';
 
-### `npm run build`
+// css section
+import './assets/tictoc.css';
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+function App() {
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+  return (
+    <div className="App">
+      <div>
+        <p>React Documentation Tic Toc Toe</p>
+        <Board></Board>
+      </div>     
+    </div>
+  );
+}
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+export default App;
 
-### `npm run eject`
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Board Js file 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```js
+import React, {Component} from 'react';
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+// component section
+import Square from './Square';
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+class Board extends Component{
+    
+    constructor(props){
+        super(props);
+        this.state = {
+            squares: Array(9).fill(null),
+        }
+    }
 
-## Learn More
+    renderSquare(i){
+        return <Square value={this.state.squares[i]}/> ;
+    }
+    
+    render(){
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+        const status = 'Next player: X';
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+        return(
+            <div>
+                <div className="status">{status}</div>
+                <div className="board-row">
+                    {this.renderSquare(0)}{this.renderSquare(1)}{this.renderSquare(2)}
+                </div>
+                <div className="board-row">
+                    
+                </div>
+                <div className="board-row">
+                    
+                </div>
+            </div>
+        );
+    }
+}
 
-### Code Splitting
+export default Board;
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```
 
-### Analyzing the Bundle Size
+Function that will call square components with props value to that component
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+```js
+renderSquare(i){
+    return <Square value={this.state.squares[i]}/> ;
+}
 
-### Making a Progressive Web App
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+we need nine box for playing this game so for initiazling the number of box, I need to write this into the state
 
-### Advanced Configuration
+```js
+constructor(props){
+    super(props);
+    this.state = {
+        squares: Array(9).fill(null),
+    }
+}
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+```
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
