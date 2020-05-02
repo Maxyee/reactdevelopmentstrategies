@@ -106,7 +106,9 @@ constructor(props){
 }
 
 ```
+Till now from the above work, the output will be like this.
 
+![alt text](https://github.com/Maxyee/reactdevelopmentstrategies/blob/master/reactTicTokToe/screenshots/oneRow.png)
 
 
 
