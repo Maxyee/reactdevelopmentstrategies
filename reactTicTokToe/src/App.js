@@ -2,7 +2,7 @@ import React from 'react';
 
 
 // components section
-import Board from './components/Board';
+import Game from './components/Game';
 
 
 
@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       <div>
         <p>React Documentation Tic Toc Toe</p>
-        <Board></Board>
+        <Game></Game>
       </div>     
     </div>
   );
