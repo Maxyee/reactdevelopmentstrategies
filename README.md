@@ -19,3 +19,5 @@ However,I will update this repository with more directory and react concept day 
 - [React TicTocToe Game from React documentation](https://github.com/Maxyee/reactdevelopmentstrategies/tree/master/reactTicTokToe)
 
 - [Old way of using Bootstrap into React Project](https://github.com/Maxyee/reactdevelopmentstrategies/tree/master/simpleBootstrapUseInReact)
+
+- [React With JSX Concept](https://github.com/Maxyee/reactdevelopmentstrategies/tree/master/reactWithJSX)
