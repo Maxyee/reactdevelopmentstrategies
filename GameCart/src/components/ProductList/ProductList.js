@@ -1,17 +1,24 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Product from '../../containers/Product';
 
-
-function ProductList(){
-    return(
+const ProductList = ({ products }) => {
+    return (
         <div>
             <h3>Products</h3>
             <ul className="product-list">
-                  <li className="product-list__item"> 
-                        Product List will be here
+              {products.map(product => (
+                  <li key={product.id} className="product-list__item">
+                    <Product {...product} />
                   </li>
+              ))}
             </ul>
         </div>
-    )
+    );
 }
 
-export default ProductList
+ProductList.propTypes = {
+    products: PropTypes.array,
+}
+
+export default ProductList;

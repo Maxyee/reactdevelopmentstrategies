@@ -1,18 +1,29 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { combineReducers, createStore } from 'redux';
+import cartReducer from './ducks/cart';
+import productsReducer from './ducks/products';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import productsData from './data/products';
+import 'bootstrap/dist/css/bootstrap.css';
 
+const rootReducer = combineReducers({
+    cart: cartReducer,
+    products: productsReducer
+});
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+let store = createStore(
+    rootReducer,
+    {
+        products: productsData // initial store values
+    },
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() // for debugging
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById('root')
+);

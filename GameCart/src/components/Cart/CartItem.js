@@ -1,17 +1,23 @@
-import react from 'react'
-import propTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-
-function CartItem(){
-    return(
+const CartItem = ({ name, price, currency, onClick }) => {
+    return (
         <div className="cart-item">
             <div>
-                <button className="btn btn-danger btn-xs">X</button>
-                <span className="cart-item_name">Cart Item Name</span>
+                <button className="btn btn-danger btn-xs" onClick={onClick}>X</button>
+                <span className="cart-item__name">{name}</span>
             </div>
-            <div className="cart-item_price">Price | Currency</div>
+            <div className="cart-item__price">{price} {currency}</div>
         </div>
-    )
+    );
 }
 
-export default CartItem
+CartItem.propTypes = {
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    currency: PropTypes.string.isRequired,
+    onClick: PropTypes.func.isRequired
+}
+
+export default CartItem;
